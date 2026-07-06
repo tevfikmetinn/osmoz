@@ -128,8 +128,3 @@ These are the things I know are missing and want to add later. If you are lookin
 This is version v0 published by Tevfik Metin.
 
 ---
-
-## License
-
-MIT. Do whatever you want with it.
-*MIT. Ne istersen yap.*
