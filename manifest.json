@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "Osmoz",
+  "version": "0.1.0",
+  "description": "Ekrana maruz kaldıkça İngilizce öğren. Metin seç, arka planda AI analiz etsin, kelime hazineni oluştur.",
+  "action": {
+    "default_popup": "src/popup/popup.html",
+    "default_title": "Osmoz"
+  },
+  "options_page": "src/options/options.html",
+  "background": {
+    "service_worker": "src/background/background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content/content.js"],
+      "css": ["src/content/content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*"
+  ]
+}

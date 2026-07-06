@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>Osmoz</title>
+  </head>
+  <body>
+    <!-- Ana sayfa -->
+    <section id="home" class="view">
+      <header class="hd">
+        <h1>🌱 Osmoz</h1>
+        <button class="icon-btn" id="openLibrary" title="Kelime hazinem">📚</button>
+      </header>
+      <div class="stats" id="stats"></div>
+      <button id="startReview" class="primary big" hidden>Tekrara başla</button>
+      <p class="empty" id="emptyMsg" hidden>
+        Henüz kaydedilmiş kart yok. Bir siteye git, bir cümle seç, 🌱 butonuna
+        tıkla.
+      </p>
+      <footer class="ft">
+        <a href="#" id="openSettings">Ayarlar</a>
+      </footer>
+    </section>
+
+    <!-- Tekrar ekranı -->
+    <section id="review" class="view" hidden>
+      <header class="hd">
+        <button class="icon-btn" id="backFromReview" title="Geri">←</button>
+        <span class="progress" id="progress"></span>
+      </header>
+
+      <div class="card">
+        <div class="grammar-tag" id="grammarTag"></div>
+        <div class="cloze" id="clozeFront"></div>
+        <div class="translation" id="clozeTranslation"></div>
+
+        <button id="showAnswer" class="primary">Cevabı gör</button>
+
+        <div class="answer-block" id="answerBlock" hidden>
+          <div class="answer" id="clozeAnswer"></div>
+          <div class="hint" id="clozeHint"></div>
+        </div>
+
+        <div class="rating" id="rating" hidden>
+          <button data-rating="1" class="rate again">Yeniden</button>
+          <button data-rating="2" class="rate hard">Zor</button>
+          <button data-rating="3" class="rate good">İyi</button>
+          <button data-rating="4" class="rate easy">Kolay</button>
+        </div>
+
+        <div class="source" id="cardSource"></div>
+      </div>
+    </section>
+
+    <!-- Kelime hazinesi -->
+    <section id="library" class="view" hidden>
+      <header class="hd">
+        <button class="icon-btn" id="backFromLibrary" title="Geri">←</button>
+        <h2>Kelime hazinesi</h2>
+      </header>
+      <div id="libraryList" class="library-list"></div>
+      <p class="empty" id="libEmpty" hidden>Hazine boş.</p>
+    </section>
+
+    <!-- Bitiş -->
+    <section id="done" class="view" hidden>
+      <div class="done-icon">🌿</div>
+      <h2>Bugünlük tamam.</h2>
+      <p>
+        Beynin bu kalıpları farklı bağlamlarda gördü. Gerisini zaman
+        halleder.
+      </p>
+      <button id="doneBack" class="primary">Kapat</button>
+    </section>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
